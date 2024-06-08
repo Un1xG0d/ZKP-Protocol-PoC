@@ -14,6 +14,11 @@ python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. zkp_auth.pro
 
 This generates `zkp_auth_pb2.py` which contains the generated request and response classes and `zkp_auth_pb2_grpc.py` which contains the generated client and server classes.
 
+## Client implementation
+The client script consists of two primary functions:
+1. **Register**: Calculates y1 and y2 using the secret x and public values g and h, and sends them to the server.
+2. **Authenticate**: Initiates the challenge-response protocol and verifies the response from the server.
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
