@@ -25,3 +25,5 @@ The client script consists of two primary functions:
 [gRPC Python Quickstart](https://grpc.io/docs/languages/python/quickstart/)
 
 [gRPC Python Basics Tutorial](https://grpc.io/docs/languages/python/basics/)
+
+[Implementing gRPC In Python: A Step-by-step Guide](https://www.velotio.com/engineering-blog/grpc-implementation-using-python)
