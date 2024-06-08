@@ -16,5 +16,7 @@ This generates `zkp_auth_pb2.py` which contains the generated request and respon
 
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
+
 [gRPC Python Quickstart](https://grpc.io/docs/languages/python/quickstart/)
+
 [gRPC Python Basics Tutorial](https://grpc.io/docs/languages/python/basics/)
