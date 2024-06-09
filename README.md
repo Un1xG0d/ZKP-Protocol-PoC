@@ -29,6 +29,24 @@ Other than the gRPC setup stuff, the server script has three main functions:
 2. **CreateAuthenticationChallenge**: Generates a challenge c and stores it along with r1 and r2.
 3. **VerifyAuthentication**: Checks the prover's response using the challenge and returns a session ID based on the verification.
 
+## Functional test
+I included a bunch of print statements to debug most steps of the process for when things didn’t work properly, but if everything works as expected, you should see something similar to the following outputs:
+### Server output
+```
+Registered test_user: y1=1152921504606846976, y2=4352281909005599932
+Challenge for test_user: auth_id=test_user_8836, r1=1152921504606846976, r2=4352281909005599932, c=69261
+Verification: g^s=2251799813685248, r1 * y1^c=2251799813685248, h^s=3618114605990078510, r2 * y2^c=3618114605990078510
+```
+
+### Client output
+```
+Registering test_user: y1=1152921504606846976, y2=4352281909005599932
+Register Response:
+Authenticating test_user: r1=1152921504606846976, r2=4352281909005599932
+Challenge: auth_id=test_user_8836, c=69261, s=855039390
+Authentication Response: session_id: "valid_session"
+```
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
