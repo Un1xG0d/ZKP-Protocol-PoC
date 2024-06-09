@@ -23,7 +23,7 @@ Most of the variable and function names were given to me from either the require
 
 Since there was no specific requirement to allow user input, I hardcoded the variables for user, x, g, and h; however this can be easily amended if needed. The variables g and h are the public values used both in the client and server scripts.
 
-Server implementation
+## Server implementation
 Other than the gRPC setup stuff, the server script has three main functions:
 1. **Register**: Stores the y1 and y2 values calculated by the client.
 2. **CreateAuthenticationChallenge**: Generates a challenge c and stores it along with r1 and r2.
