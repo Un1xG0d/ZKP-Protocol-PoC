@@ -19,6 +19,10 @@ The client script consists of two primary functions:
 1. **Register**: Calculates y1 and y2 using the secret x and public values g and h, and sends them to the server.
 2. **Authenticate**: Initiates the challenge-response protocol and verifies the response from the server.
 
+Most of the variable and function names were given to me from either the requirements document, the supplied Protobuf definition or the equations referenced in the book, so after configuring a basic gRPC setup, most of what I had to do was plug in the variables and equations given to me.
+
+Since there was no specific requirement to allow user input, I hardcoded the variables for user, x, g, and h; however this can be easily amended if needed. The variables g and h are the public values used both in the client and server scripts.
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
