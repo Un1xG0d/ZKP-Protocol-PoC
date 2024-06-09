@@ -55,6 +55,18 @@ docker-compose up --build
 
 In the client script, I used an environment variable called HOST to determine which value it should use, whether the app is deployed in Docker or on the local machine.
 
+If this deploys successfully, you should get output similar to the following:
+```
+Attaching to client-1, server-1
+client-1  | Registering test_user: y1=1152921504606846976, y2=4352281909005599932
+client-1  | Register Response:
+client-1  | Authenticating test_user: r1=1152921504606846976, r2=4352281909005599932
+client-1  | Challenge: auth_id=test_user_6133, c=54388, s=671432205
+client-1  | Authentication Response: session_id: "valid_session"
+client-1  |
+client-1 exited with code 0
+```
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
