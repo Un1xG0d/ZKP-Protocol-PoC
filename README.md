@@ -75,3 +75,5 @@ client-1 exited with code 0
 [gRPC Python Basics Tutorial](https://grpc.io/docs/languages/python/basics/)
 
 [Implementing gRPC In Python: A Step-by-step Guide](https://www.velotio.com/engineering-blog/grpc-implementation-using-python)
+
+[A Simpler Explanation of Chaum-Pederson](https://medium.com/asecuritysite-when-bob-met-alice/to-the-builders-of-our-future-meet-the-chaum-pedersen-non-interactive-zero-knowledge-proof-method-9846dee47fbc)
