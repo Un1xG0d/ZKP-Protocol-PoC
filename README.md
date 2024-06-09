@@ -1,18 +1,18 @@
 # Nillion’s ZKP Protocol PoC
 ## Overview
-I chose to attempt my solution in Python, since that is what I’m most comfortable with.
+I chose to attempt my solution in Python, since that is what I have the most years of experience with.
 
-To implement the Chaum–Pedersen Protocol as outlined in the document, I needed to not only read the sections in the attached book, but also scour through several docs pages and take a look at some existing open source implementations of gRPC. I will try to add any helpful docs to the Resources section.
+To implement the Chaum–Pedersen Protocol as outlined in the [attached document](https://github.com/Un1xG0d/Nillion-ZKP-Protocol-PoC/blob/master/Nillion_Technical_Test_V4.pdf), I needed to not only read the sections of the book that were linked, but also analyze several documentation pages and take a look at some existing open source implementations of gRPC. I will try to add any helpful docs to the Resources section.
 
 ## Set up Protobuf and gRPC
-This information came from the PDF I was sent. The filename is `zkp_auth.proto`, which I used to create the gRPC code from the Protobuf file.
+The Protobuf definition came from the PDF I received with the project requirements. The filename of the definition is `zkp_auth.proto`, which I used to create the gRPC code.
 
 After installing the required dependencies, I used the following command to accomplish that:
 ```
 python3 -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. zkp_auth.proto
 ```
 
-This generates `zkp_auth_pb2.py` which contains the generated request and response classes and `zkp_auth_pb2_grpc.py` which contains the generated client and server classes.
+This generates `zkp_auth_pb2.py` which contains the generated request and response classes, and `zkp_auth_pb2_grpc.py` which contains the generated client and server classes.
 
 ## Client implementation
 The client script consists of two primary functions:
