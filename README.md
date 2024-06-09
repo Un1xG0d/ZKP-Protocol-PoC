@@ -47,6 +47,14 @@ Challenge: auth_id=test_user_8836, c=69261, s=855039390
 Authentication Response: session_id: "valid_session"
 ```
 
+## Deploy on Docker
+This repo includes two Dockerfiles; one for the server and one for the client. The `docker-compose.yml` file will manage both containers. To deploy the containers, simply use the command:
+```
+docker-compose up --build
+```
+
+In the client script, I used an environment variable called HOST to determine which value it should use, whether the app is deployed in Docker or on the local machine.
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 

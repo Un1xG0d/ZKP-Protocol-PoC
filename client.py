@@ -1,4 +1,5 @@
 import grpc
+import os
 import zkp_auth_pb2
 import zkp_auth_pb2_grpc
 
@@ -43,7 +44,8 @@ def authenticate(stub, user, x, g, h):
     print("Authentication Response:", answer_response)
 
 def run():
-    with grpc.insecure_channel('localhost:50051') as channel:
+    host = os.getenv('HOST', 'localhost')
+    with grpc.insecure_channel(host + ':50051') as channel:
         stub = zkp_auth_pb2_grpc.AuthStub(channel)
         user = "test_user"
         x = 12345

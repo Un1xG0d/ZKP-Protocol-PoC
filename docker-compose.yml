@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "50051:50051"
+    networks:
+      - zkp_net
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    depends_on:
+      - server
+    networks:
+      - zkp_net
+    environment:
+      - HOST=server
+
+networks:
+  zkp_net:
+    driver: bridge
