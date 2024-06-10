@@ -67,6 +67,14 @@ client-1  |
 client-1 exited with code 0
 ```
 
+## Bonus requirements
+:white_check_mark: Functional test of the ZKP Protocol
+:white_check_mark: A setup to run the Client and the Server
+:white_check_mark: Code organization
+:white_check_mark: Code quality 
+:white_check_mark: Well documented code
+:white_check_mark: Each instance runs in a separated docker container and have a docker compose to run the setup 
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
