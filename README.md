@@ -47,6 +47,16 @@ Challenge: auth_id=test_user_8836, c=69261, s=855039390
 Authentication Response: session_id: "valid_session"
 ```
 
+## Unit tests
+I included two scripts using the Python `unittest` module. One to test the client script and one to test the server script.
+
+You can run these tests using the following command:
+```
+python3 -m unittest discover -s . -p "test_*.py"
+```
+
+There are also many ways to accomplish this using the `grpcio-testing` library, but the method I chose was a bit cleaner.
+
 ## Deploy on Docker
 This repo includes two Dockerfiles; one for the server and one for the client. The `docker-compose.yml` file will manage both containers. To deploy the containers, simply use the command:
 ```
@@ -68,6 +78,8 @@ client-1 exited with code 0
 ```
 
 ## Bonus requirements
+:white_check_mark: Unit tests
+
 :white_check_mark: Functional test of the ZKP Protocol
 
 :white_check_mark: A setup to run the Client and the Server
@@ -90,3 +102,5 @@ client-1 exited with code 0
 [Implementing gRPC In Python: A Step-by-step Guide](https://www.velotio.com/engineering-blog/grpc-implementation-using-python)
 
 [A Simpler Explanation of Chaum-Pederson](https://medium.com/asecuritysite-when-bob-met-alice/to-the-builders-of-our-future-meet-the-chaum-pedersen-non-interactive-zero-knowledge-proof-method-9846dee47fbc)
+
+[How To Use unittest to Write a Test Case for a Function in Python](https://www.digitalocean.com/community/tutorials/how-to-use-unittest-to-write-a-test-case-for-a-function-in-python)
