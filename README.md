@@ -2,7 +2,7 @@
 ## Overview
 I chose to attempt my solution in Python, since that is what I have the most years of experience with.
 
-To implement the Chaum–Pedersen Protocol as outlined in the [attached document](https://github.com/Un1xG0d/Nillion-ZKP-Protocol-PoC/blob/master/Nillion_Technical_Test_V4.pdf), I needed to not only read the sections of the book that were linked, but also analyze several documentation pages and take a look at some existing open source implementations of gRPC. I will try to add any helpful docs to the Resources section.
+To implement the Chaum–Pedersen Protocol as outlined in the [attached document](https://github.com/Un1xG0d/ZKP-Protocol-PoC/blob/master/Technical_Test_V4.pdf), I needed to not only read the sections of the book that were linked, but also analyze several documentation pages and take a look at some existing open source implementations of gRPC. I will try to add any helpful docs to the Resources section.
 
 ## Set up Protobuf and gRPC
 The Protobuf definition came from the PDF I received with the project requirements. The filename of the definition is `zkp_auth.proto`, which I used to create the gRPC code.
