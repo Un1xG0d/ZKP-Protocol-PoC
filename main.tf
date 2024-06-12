@@ -40,6 +40,7 @@ resource "aws_security_group" "main" {
 resource "aws_instance" "server" {
   ami           = "ami-08a0d1e16fc3f61ea"  # Amazon Linux 2023 AMI
   instance_type = "t2.micro"
+  key_name      = "zkp_test"
   subnet_id     = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.main.id]
   associate_public_ip_address = true
@@ -53,6 +54,7 @@ resource "aws_instance" "server" {
 resource "aws_instance" "client" {
   ami           = "ami-08a0d1e16fc3f61ea"  # Amazon Linux 2023 AMI
   instance_type = "t2.micro"
+  key_name      = "zkp_test"
   subnet_id     = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.main.id]
   associate_public_ip_address = true
