@@ -9,7 +9,7 @@ variable "region" {
 
 variable "allowed_ssh_ip" {
   description = "The IP address allowed to SSH into the instances"
-  default     = "0.0.0.0/0"
+  default     = "73.61.200.156/32" # Alan's apartment IP address
 }
 
 resource "aws_vpc" "main" {
@@ -53,7 +53,7 @@ resource "aws_instance" "server" {
   subnet_id     = aws_subnet.main.id
   security_groups = [aws_security_group.main.name]
 
-  user_data = file("scripts/server_setup.sh")
+  user_data = file("server_setup.sh")
   tags = {
     Name = "ServerInstance"
   }
@@ -65,7 +65,7 @@ resource "aws_instance" "client" {
   subnet_id     = aws_subnet.main.id
   security_groups = [aws_security_group.main.name]
 
-  user_data = file("scripts/client_setup.sh")
+  user_data = file("client_setup.sh")
   tags = {
     Name = "ClientInstance"
   }
