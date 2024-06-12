@@ -42,6 +42,7 @@ resource "aws_instance" "server" {
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.main.id]
+  associate_public_ip_address = true
 
   user_data = file("setup_server.sh")
   tags = {
@@ -54,6 +55,7 @@ resource "aws_instance" "client" {
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main.id
   vpc_security_group_ids = [aws_security_group.main.id]
+  associate_public_ip_address = true
 
   user_data = file("setup_client.sh")
   tags = {
