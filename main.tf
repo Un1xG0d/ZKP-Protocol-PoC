@@ -41,7 +41,7 @@ resource "aws_instance" "server" {
   ami           = "ami-08a0d1e16fc3f61ea"  # Amazon Linux 2023 AMI
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main.id
-  security_groups = [aws_security_group.main.name]
+  vpc_security_group_ids = [aws_security_group.main.id]
 
   user_data = file("setup_server.sh")
   tags = {
@@ -53,7 +53,7 @@ resource "aws_instance" "client" {
   ami           = "ami-08a0d1e16fc3f61ea"  # Amazon Linux 2023 AMI
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.main.id
-  security_groups = [aws_security_group.main.name]
+  vpc_security_group_ids = [aws_security_group.main.id]
 
   user_data = file("setup_client.sh")
   tags = {
