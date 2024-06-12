@@ -53,7 +53,7 @@ resource "aws_instance" "server" {
   subnet_id     = aws_subnet.main.id
   security_groups = [aws_security_group.main.name]
 
-  user_data = file("server_setup.sh")
+  user_data = file("setup_server.sh")
   tags = {
     Name = "ServerInstance"
   }
@@ -65,7 +65,7 @@ resource "aws_instance" "client" {
   subnet_id     = aws_subnet.main.id
   security_groups = [aws_security_group.main.name]
 
-  user_data = file("client_setup.sh")
+  user_data = file("setup_client.sh")
   tags = {
     Name = "ClientInstance"
   }
