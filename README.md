@@ -1,4 +1,4 @@
-# Nillion’s ZKP Protocol PoC
+# ZKP Protocol PoC
 ## Overview
 I chose to attempt my solution in Python, since that is what I have the most years of experience with.
 
