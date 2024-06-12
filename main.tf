@@ -1,15 +1,5 @@
 provider "aws" {
-  region = var.region
-}
-
-variable "region" {
-  description = "The AWS region to deploy in"
-  default     = "us-east-1"
-}
-
-variable "allowed_ssh_ip" {
-  description = "The IP address allowed to SSH into the instances"
-  default     = "73.61.200.156/32" # Alan's apartment IP address
+  region = "us-east-1"
 }
 
 resource "aws_vpc" "main" {
@@ -29,7 +19,7 @@ resource "aws_security_group" "main" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.allowed_ssh_ip]
+    cidr_blocks = ["73.61.200.156/32"] # Alan's apartment IP address
   }
 
   ingress {
