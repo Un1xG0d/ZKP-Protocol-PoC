@@ -78,7 +78,9 @@ resource "aws_instance" "client" {
   vpc_security_group_ids = [aws_security_group.main.id]
   associate_public_ip_address = true
 
-  user_data = file("${path.module}/setup_client.sh")
+  user_data = templatefile("${path.module}/setup_client.sh.tpl", {
+    server_ip = aws_instance.server.public_ip
+  })
   tags = {
     Name = "ClientInstance"
   }
