@@ -49,9 +49,9 @@ resource "aws_security_group" "main" {
   }
 
   egress {
-    from_port   = 50051
-    to_port     = 50051
-    protocol    = "tcp"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
@@ -64,7 +64,7 @@ resource "aws_instance" "server" {
   vpc_security_group_ids = [aws_security_group.main.id]
   associate_public_ip_address = true
 
-  user_data = file("setup_server.sh")
+  user_data = file("${path.module}/setup_server.sh")
   tags = {
     Name = "ServerInstance"
   }
@@ -78,7 +78,7 @@ resource "aws_instance" "client" {
   vpc_security_group_ids = [aws_security_group.main.id]
   associate_public_ip_address = true
 
-  user_data = file("setup_client.sh")
+  user_data = file("${path.module}/setup_client.sh")
   tags = {
     Name = "ClientInstance"
   }
