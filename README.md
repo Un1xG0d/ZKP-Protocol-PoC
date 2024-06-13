@@ -77,6 +77,21 @@ client-1  |
 client-1 exited with code 0
 ```
 
+## Deploy on AWS
+There are several ways to deploy this code to AWS. I could either deploy the scripts in containers to EKS, but since the requirements stated "the client in one machine and the server in another machine" I assumed this to mean separate EC2 machines. I built this to be deployed on two EC2 instances with Terraform, however, this can be easily ammended to use EKS if needed.
+
+The `main.tf` file holds all the resource definitions. There are also two setup scripts to configure each of the EC2 instances.
+
+This uses a keypair stored on my personal AWS account, but you can properly configure SSH to connect to the new instances if you generate a keypair called `zkp_test.pem`.
+
+To start the deployment, use the commands:
+```
+terraform init
+terraform apply
+```
+
+If this works correctly, you should be able to remote into the instances and see the expected script output in a file called `output.txt`.
+
 ## Bonus requirements
 :white_check_mark: Unit tests
 
@@ -92,6 +107,9 @@ client-1 exited with code 0
 
 :white_check_mark: Each instance runs in a separated docker container and have a docker compose to run the setup 
 
+:white_check_mark: There is code to deploy the two containers in AWS. The client in one machine and the
+server in another machine
+
 ## Resources
 [IntroToCrypto Book](https://www.cs.umd.edu/~waa/414-F11/IntroToCrypto.pdf)
 
@@ -104,3 +122,9 @@ client-1 exited with code 0
 [A Simpler Explanation of Chaum-Pederson](https://medium.com/asecuritysite-when-bob-met-alice/to-the-builders-of-our-future-meet-the-chaum-pedersen-non-interactive-zero-knowledge-proof-method-9846dee47fbc)
 
 [How To Use unittest to Write a Test Case for a Function in Python](https://www.digitalocean.com/community/tutorials/how-to-use-unittest-to-write-a-test-case-for-a-function-in-python)
+
+[Terraform AWS Instance Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)
+
+[Terraform AWS Security Group Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group)
+
+[How To Create A Terraform EC2 Instance On AWS](https://www.bacancytechnology.com/blog/terraform-ec2-instance-on-aws)
